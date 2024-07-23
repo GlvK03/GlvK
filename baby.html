@@ -1,0 +1,75 @@
+echo "# GlvK" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/GlvK03/GlvK.git
+git push -u origin main<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	
+    <meta charset="UTF-8">
+    <title>倒计时到8月22日晚上9点55分</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #FAD0C4; /* 樱花粉色 */
+            color: #333; /* 文本颜色改为深色，以提高可读性 */
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #countdown {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        #countdown span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>倒计时到8月22日晚上9点55分</h1>
+        <div id="countdown">00天 00小时 00分钟 00秒</div>
+    </div>
+
+    <script>
+        var countDownDate = new Date("August 22, 2024 21:55:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the countdown
+            document.getElementById("countdown").innerHTML = 
+                "<span>" + days + "</span>天 " + 
+                "<span>" + hours + "</span>小时 " + 
+                "<span>" + minutes + "</span>分钟 " + 
+                "<span>" + seconds + "</span>秒 ";
+
+            // If the countdown is over, stop the interval
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "倒计时结束";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
